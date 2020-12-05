@@ -1,6 +1,6 @@
 import Axios, { CancelToken, AxiosError } from "axios"
 import { converToFormData } from "../utils/apiFunctions"
-import { showAlert } from "../utils/showAlert"
+// import { showAlert } from "../utils/showAlert"
 
 export let apiURL = ""
 
@@ -18,7 +18,7 @@ export const setTokenForAPI = (token: string) => {
 
 export const handleErr = async (err: AxiosError) => {
   if (err?.response?.status && err?.response?.status === 429) {
-    showAlert(null, "Очень много запросов на сервер. Пожалуйста, подождите")
+    // showAlert(null, "Очень много запросов на сервер. Пожалуйста, подождите")
   }
 
   return err?.response

@@ -1,10 +1,12 @@
 import { composeWithDevTools } from "redux-devtools-extension"
-import { createStore, combineReducers, applyMiddleware, Action } from "redux"
+import { createStore, combineReducers, applyMiddleware } from "redux"
 import thunkMiddleware from "redux-thunk"
 import { appReducer } from "./app-reducer"
+import { meReducer } from "./me-reducer"
 
 export let rootReducer = combineReducers({
   app: appReducer,
+  me: meReducer,
 })
 
 const devTools =

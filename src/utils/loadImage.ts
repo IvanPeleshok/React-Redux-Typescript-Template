@@ -1,5 +1,4 @@
-import { showAlert } from './showAlert'
-import { AlertifyStatusEnum } from '../types/types'
+// import { showAlert } from './showAlert'
 
 export const loadImage = (file: File, fieldName: string, holderId: string, setFiledValue: (field: string, value: any, shouldValidate?: boolean | undefined) => void) => {
 	let fileReader = new FileReader()
@@ -17,7 +16,7 @@ export const loadImage = (file: File, fieldName: string, holderId: string, setFi
 			setFiledValue(fieldName, file)
 	
 		} else {
-			showAlert(AlertifyStatusEnum.error, `Размер файла не должен превышеть ${maxFileSize}МБ`)
+			// showAlert(AlertifyStatusEnum.error, `Размер файла не должен превышеть ${maxFileSize}МБ`)
 		}
 	}
 }
