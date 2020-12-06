@@ -1,9 +1,10 @@
+import { IApp } from "../interface/app"
 import { TInferActions } from "../types/redux"
 
 export type TInitialState = typeof initialState
 type TActions = TInferActions<typeof actions>
 
-let initialState = {
+let initialState: IApp = {
   initialization: false,
 }
 

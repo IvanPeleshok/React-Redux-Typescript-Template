@@ -38,7 +38,7 @@ export const LoginForm: FC<IProps> = ({ setAuthPhase, ...props }) => {
         }}
         validationSchema={validationSchema}
         enableReinitialize={true}
-        onSubmit={(values: IKeysForm, { setSubmitting, resetForm }) => {
+        onSubmit={(values, { setSubmitting, resetForm }) => {
           alert(JSON.stringify(values))
           setSubmitting(false)
           resetForm()

@@ -1,16 +1,16 @@
 import { ResultCode } from "../api/api"
 import { userAPI } from "../api/auth-api"
-import { IEmail, IId, ILogin } from "../interface/me"
+import { IEmail, IId, ILogin, IUser } from "../interface/me"
 import { TInferActions, TBaseThunk } from "../types/redux"
 
 export type TInitialState = typeof initialState
 type TActions = TInferActions<typeof actions>
 type TThunk = TBaseThunk<TActions>
 
-let initialState = {
-  userId: (null as unknown) as IId,
-  email: (null as unknown) as IEmail,
-  login: (null as unknown) as ILogin,
+let initialState: IUser = {
+  id: null,
+  email: null,
+  login: null,
   isAuth: false,
 }
 
@@ -30,10 +30,10 @@ export const meReducer = (
 }
 
 export const actions = {
-  setAuth: (userId: IId, email: IEmail, login: ILogin, isAuth: boolean) =>
+  setAuth: (id: number, email: string, login: string, isAuth: boolean) =>
     ({
       type: "me/SET_AUTH",
-      payload: { userId, email, login, isAuth },
+      payload: { id, email, login, isAuth },
     } as const),
 }
 
