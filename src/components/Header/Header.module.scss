@@ -1,0 +1,47 @@
+@import '../../assets/scss/TransitionGroup.scss';
+
+
+.enterActive {
+    animation: show-item .6s forwards;
+}
+
+
+.exitActive {
+    animation: hide-item .6s forwards;
+}
+
+.header {
+
+    position: fixed;
+    background: darkblue;
+    width: 100%;
+
+    & .wrapper {
+        max-width: 1140px;
+        margin: 0 auto;
+        padding: 15px 0px;
+
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+
+        .logo {
+            color: red;
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        & .item {
+            color: white;
+
+            font-size: 20px;
+            font-weight: 500;
+
+            cursor: pointer;
+        }
+    }
+}
+
+
+

@@ -1,6 +1,6 @@
 import { ResultCode } from "../api/api"
 import { userAPI } from "../api/auth-api"
-import { IEmail, IId, ILogin, IUser } from "../interface/me"
+import { IUser } from "../interface/me"
 import { TInferActions, TBaseThunk } from "../types/redux"
 
 export type TInitialState = typeof initialState

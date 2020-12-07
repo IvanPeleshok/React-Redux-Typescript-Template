@@ -4,11 +4,14 @@
 @import url('./assets/scss/Colors.scss');
 @import url('./assets/scss/CommonStyle.scss');
 @import url('./assets/scss/Alertify.scss');
+@import url('./assets/scss/TransitionGroup.scss');
 
 @import './assets/scss/Colors.scss';
 
 body {
 	font-family: 'Open Sans';
+	box-sizing: border-box;
+	height: 100vh;
 }
 
 .app-content {
