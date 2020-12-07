@@ -1,6 +1,7 @@
 import React, { FC, useState } from "react"
 import { CSSTransition } from "react-transition-group"
 import { AuthForm } from "../AuthForm/AuthForm"
+import { Popup } from "../Common/Popup/Popup"
 import s from "./Header.module.scss"
 
 export const Header: FC = () => {
@@ -25,18 +26,11 @@ export const Header: FC = () => {
           </div>
         </div>
       </header>
-      <CSSTransition
-        in={isOpen}
-        timeout={500}
-        mountOnEnter
-        unmountOnExit
-        classNames={{
-          enterActive: s.enterActive,
-          exitActive: s.exitActive,
-        }}
-      >
-        <AuthForm/>
-      </CSSTransition>
+      {isOpen && (
+        <Popup setOpen={setOpen}>
+          <AuthForm />
+        </Popup>
+      )}
     </>
   )
 }

@@ -1,15 +1,3 @@
-@import '../../assets/scss/TransitionGroup.scss';
-
-
-.enterActive {
-    animation: show-item .6s forwards;
-}
-
-
-.exitActive {
-    animation: hide-item .6s forwards;
-}
-
 .header {
 
     background: darkblue;

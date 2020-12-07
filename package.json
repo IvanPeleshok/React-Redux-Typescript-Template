@@ -41,6 +41,7 @@
     "react-transition-group": "^4.4.1",
     "redux-devtools-extension": "^2.13.8",
     "redux-thunk": "^2.3.0",
+    "styled-components": "^5.2.1",
     "typescript": "^3.7.5",
     "yup": "^0.29.3"
   },
@@ -64,5 +65,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/styled-components": "^5.1.4"
   }
 }
