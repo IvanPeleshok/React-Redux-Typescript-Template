@@ -1,4 +1,4 @@
-import React, { FC } from "react"
+import React, { FC, memo } from "react"
 import s from "./AuthForm.module.scss"
 import { Formik, Form } from "formik"
 import * as yup from "yup"
@@ -10,12 +10,17 @@ interface IProps {
   setAuthPhase: (authPhase: AuthPhaseEnum) => void
 }
 
-interface IKeysForm {
+interface IInitialValues {
   username: string
   password: string
 }
 
-export const LoginForm: FC<IProps> = ({ setAuthPhase, ...props }) => {
+const initialValues: IInitialValues = {
+  username: "",
+  password: "",
+}
+
+export const LoginForm = memo<IProps>(({ setAuthPhase, ...props }) => {
   const validationSchema = yup.object({
     username: yup
       .string()
@@ -32,10 +37,7 @@ export const LoginForm: FC<IProps> = ({ setAuthPhase, ...props }) => {
     <div className={s.loginPage}>
       <Formik
         validateOnChange={true}
-        initialValues={{
-          username: "",
-          password: "",
-        }}
+        initialValues={initialValues}
         validationSchema={validationSchema}
         enableReinitialize={true}
         onSubmit={(values, { setSubmitting, resetForm }) => {
@@ -82,4 +84,4 @@ export const LoginForm: FC<IProps> = ({ setAuthPhase, ...props }) => {
       </Formik>
     </div>
   )
-}
+})

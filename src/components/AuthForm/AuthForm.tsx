@@ -1,4 +1,6 @@
-import React, { FC, useState } from "react"
+import React, { memo, useState } from "react"
+import { useSelector } from "react-redux"
+import { meSelectors } from "../../redux/selectors/selectors"
 import { LoginForm } from "./LoginForm"
 import { RegistrationForm } from "./RegistrationForm"
 
@@ -7,9 +9,9 @@ export enum AuthPhaseEnum {
   registation,
 }
 
-export const AuthForm: FC = () => {
-  const [authPhase, setAuthPhase] = useState(AuthPhaseEnum.login)
 
+export const AuthForm = memo(() => {
+  const [authPhase, setAuthPhase] = useState(AuthPhaseEnum.login)
   let renderComponent
   if (authPhase === AuthPhaseEnum.login) {
     renderComponent = <LoginForm setAuthPhase={setAuthPhase} />
@@ -17,5 +19,6 @@ export const AuthForm: FC = () => {
     renderComponent = <RegistrationForm setAuthPhase={setAuthPhase} />
   }
 
+
   return <>{renderComponent}</>
-}
+})

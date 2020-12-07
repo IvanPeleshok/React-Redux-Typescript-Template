@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, FC } from "react"
+import React, { useLayoutEffect, FC, memo } from "react"
 import { Route, withRouter, useHistory } from "react-router-dom"
 import { Switch, RouteComponentProps } from "react-router"
 import "./App.scss"
@@ -13,7 +13,7 @@ import { Header } from "./components/Header/Header"
 // import Header from './components/Header/Header'
 // import Menu from './components/Menu/Menu'
 
-const App = ({ ...props }) => {
+const App = memo(({ ...props }) => {
   // const dispatch = useDispatch()
   // const logged = useSelector<TAppState, boolean>((state) => state.me.isAuth)
 
@@ -29,6 +29,6 @@ const App = ({ ...props }) => {
       <div className="app-container"></div>
     </>
   )
-}
+})
 
 export default App

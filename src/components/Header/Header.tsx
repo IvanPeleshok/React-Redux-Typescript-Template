@@ -35,7 +35,7 @@ export const Header: FC = () => {
           exitActive: s.exitActive,
         }}
       >
-        <AuthForm />
+        <AuthForm/>
       </CSSTransition>
     </>
   )

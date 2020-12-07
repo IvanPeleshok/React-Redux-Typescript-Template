@@ -1,4 +1,4 @@
-import React, { FC } from "react"
+import React, { FC, memo } from "react"
 import s from "./AuthForm.module.scss"
 import { Formik, Form } from "formik"
 import * as yup from "yup"
@@ -10,7 +10,7 @@ interface IProps {
   setAuthPhase: (authPhase: AuthPhaseEnum) => void
 }
 
-export const RegistrationForm: FC<IProps> = ({ setAuthPhase }) => {
+export const RegistrationForm = memo<IProps>(({ setAuthPhase }) => {
   const validationSchema = yup.object({
     username: yup
       .string()
@@ -58,8 +58,7 @@ export const RegistrationForm: FC<IProps> = ({ setAuthPhase }) => {
           resetForm()
         }}
       >
-        {({ isSubmitting, values }) => {
-          console.log(values)
+        {({ isSubmitting }) => {
           return (
             <Form className={s.loginForm}>
               <h2 className={s.loginTitle}>Регистрация</h2>
@@ -119,4 +118,4 @@ export const RegistrationForm: FC<IProps> = ({ setAuthPhase }) => {
       </Formik>
     </div>
   )
-}
+})
