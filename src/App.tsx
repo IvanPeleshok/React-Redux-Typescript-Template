@@ -1,7 +1,8 @@
-import React, { useLayoutEffect, FC, memo } from "react"
+import React, { useLayoutEffect, FC, memo, useEffect } from "react"
 import { Route, withRouter, useHistory } from "react-router-dom"
-import { Switch, RouteComponentProps } from "react-router"
+import { Switch, RouteComponentProps, useLocation } from "react-router"
 import "./App.scss"
+import qs from "query-string"
 import { withSuspense } from "./hoc/withSuspense"
 import { Header } from "./components/Header/Header"
 // import { useSelector, useDispatch } from "react-redux"
@@ -14,6 +15,9 @@ import { Header } from "./components/Header/Header"
 // import Menu from './components/Menu/Menu'
 
 const App = memo(({ ...props }) => {
+  const history = useHistory()
+  const location = useLocation()
+  const querys = qs.parse(location.search)
   // const dispatch = useDispatch()
   // const logged = useSelector<TAppState, boolean>((state) => state.me.isAuth)
 
@@ -23,6 +27,7 @@ const App = memo(({ ...props }) => {
   // if (!logged) {
   //   return <AuthForm />
   // }
+
   return (
     <>
       <Switch>
