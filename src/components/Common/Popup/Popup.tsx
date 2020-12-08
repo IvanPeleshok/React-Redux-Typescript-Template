@@ -20,16 +20,20 @@ export const Popup = memo<IProps>(({ setOpen, children }) => {
     }
   }, [])
   return (
-    <>
+    <PopupW>
       <PopupBg
         onClick={() => {
           setOpen(false)
         }}
       />
       <div ref={modalRef}>{children}</div>
-    </>
+    </PopupW>
   )
 })
+
+const PopupW = styled.div`
+  position: reletive;
+`
 
 const PopupBg = styled.div`
   position: absolute;

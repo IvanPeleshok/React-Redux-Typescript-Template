@@ -25,8 +25,10 @@ const App = memo(({ ...props }) => {
   // }
   return (
     <>
-      <Header />
-      <div className="app-container"></div>
+      <Switch>
+        <Header />
+        <div className="app-content"></div>
+      </Switch>
     </>
   )
 })
