@@ -30,7 +30,7 @@ export const actions = {
 
 // export const someThunk = (): TThunk => async (dispatch) => {
 //   try {
-//     const response = await API.getSome()
+//     const response = await API.getSome() as AxiosResponse
 //     dispatch(actions.setAction)
 //   } catch (error) {
 //     console.log("An error has occurred")

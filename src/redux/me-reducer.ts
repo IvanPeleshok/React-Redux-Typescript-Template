@@ -1,3 +1,4 @@
+import { AxiosResponse } from "axios"
 import { ResultCode } from "../api/api"
 import { userAPI } from "../api/auth-api"
 import { IUser } from "../interface/me"
@@ -51,7 +52,7 @@ export const login = (email: string, password: string): TThunk => async (
   dispatch
 ) => {
   try {
-    const response = await userAPI.login(email, password)
+    const response = await userAPI.login(email, password) as AxiosResponse
     if (response?.data.resultCode === ResultCode.Success) {
       dispatch(getAuthUserData())
     } else {
