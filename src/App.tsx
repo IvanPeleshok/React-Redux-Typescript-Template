@@ -5,6 +5,7 @@ import "./App.scss"
 import qs from "query-string"
 import { withSuspense } from "./hoc/withSuspense"
 import { Header } from "./components/Header/Header"
+import { VideoComponent } from "./components/Video/VideoComponent"
 // import { useSelector, useDispatch } from "react-redux"
 // import Login from "./components/Login/Login"
 // import { TAppState } from "./types/redux"
@@ -30,8 +31,8 @@ const App = memo(({ ...props }) => {
 
   return (
     <>
+      <Header />
       <Switch>
-        <Header />
         <div className="app-content"></div>
       </Switch>
     </>

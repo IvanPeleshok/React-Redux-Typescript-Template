@@ -32,7 +32,8 @@ export const Popup = memo<IProps>(({ setOpen, children }) => {
 })
 
 const PopupW = styled.div`
-  position: reletive;
+  position: relative;
+  width: 100%;
 `
 
 const PopupBg = styled.div`
@@ -43,5 +44,5 @@ const PopupBg = styled.div`
   width: 100%;
   background: #000;
   opacity: 0.3;
-  zindex: 3;
+  z-index: 3;
 `
